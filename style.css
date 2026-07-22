@@ -163,15 +163,17 @@ p {
   left: 0;
   width: 100%;
   z-index: 1000;
-  padding: 20px 0;
+  padding: 24px 0;
   transition: var(--transition);
-  background-color: rgba(250, 248, 245, 0.85);
-  backdrop-filter: blur(12px);
+  background-color: transparent;
+  backdrop-filter: none;
   border-bottom: 1px solid transparent;
 }
 
 .navbar.scrolled {
   padding: 14px 0;
+  background-color: rgba(250, 248, 245, 0.85);
+  backdrop-filter: blur(12px);
   border-bottom-color: var(--border-light);
   box-shadow: var(--shadow-sm);
 }
@@ -247,11 +249,31 @@ p {
 /* Hero Section */
 .hero-section {
   position: relative;
-  padding: 160px 0 100px;
-  min-height: 85vh;
+  background-color: var(--bg-color);
+  padding: 120px 0 60px;
+  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
+  justify-content: center;
   overflow: hidden;
+}
+
+.hero-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-container {
@@ -280,6 +302,7 @@ p {
   letter-spacing: -0.02em;
   margin-bottom: 20px;
   line-height: 1.1;
+  text-shadow: 0 2px 14px rgba(250, 248, 245, 0.95);
 }
 
 .hero-headline .highlight-bold {
@@ -301,7 +324,7 @@ p {
   align-items: center;
   justify-content: center;
   gap: 16px;
-  margin-bottom: 60px;
+  margin-bottom: 0;
 }
 
 /* Floating Art Illustrations */
@@ -342,11 +365,19 @@ p {
   right: -2%;
 }
 
-/* Partners / Tech Marquee Section */
+/* Tech Logos Section (Beneath Background Image) */
+.tech-logos-section {
+  background-color: var(--bg-color);
+  padding: 44px 0 52px;
+  border-bottom: 1px solid var(--border-light);
+  position: relative;
+  z-index: 3;
+}
+
 .partners-block {
-  margin-top: 50px;
-  padding-top: 36px;
-  border-top: 1px solid var(--border-light);
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
   overflow: hidden;
   width: 100%;
 }
@@ -464,9 +495,9 @@ p {
 
 .timeline-line {
   position: absolute;
-  top: 40px;
-  bottom: 80px;
-  left: 17px;
+  top: 14px;
+  bottom: 110px;
+  left: 17.25px;
   width: 1.5px;
   background-color: var(--text-main);
   z-index: 1;
