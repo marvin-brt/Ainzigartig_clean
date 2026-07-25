@@ -147,7 +147,7 @@ function initMobileMenu() {
     toggleMenu();
   });
 
-  document.querySelectorAll('.nav-link').forEach(link => {
+  document.querySelectorAll('.nav-link, .nav-mobile-cta').forEach(link => {
     link.addEventListener('click', () => {
       toggleMenu(false);
     });
