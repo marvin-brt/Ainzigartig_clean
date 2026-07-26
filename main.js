@@ -228,6 +228,14 @@ window.openContactModal = function () {
     document.body.style.overflow = 'hidden';
     modalOpenedTime = Date.now();
 
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('formSuccess');
+    const modalHeader = modal.querySelector('.modal-header');
+
+    if (form) form.style.display = 'block';
+    if (modalHeader) modalHeader.style.display = 'block';
+    if (success) success.classList.remove('show');
+
     const formError = document.getElementById('formError');
     if (formError) {
       formError.style.display = 'none';
@@ -356,6 +364,8 @@ window.handleFormSubmit = async function (e) {
   function showFormSuccess() {
     if (form && success) {
       form.style.display = 'none';
+      const modalHeader = document.querySelector('#contactModal .modal-header');
+      if (modalHeader) modalHeader.style.display = 'none';
       success.classList.add('show');
     }
   }
